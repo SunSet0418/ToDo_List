@@ -1,61 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="3"
-    android:orientation="vertical"
     tools:context="kr.soylatte.todo.Activity.Add_Schedule">
 
     <LinearLayout
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/colorPrimary">
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#00ff0000"
-            android:src="@drawable/ic_clear_black_24dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:id="@+id/toplayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <ImageButton
+                android:onClick="back"
+                android:id="@+id/back_todo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#00ff0000"
+                android:src="@drawable/ic_clear_black_24dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
                 android:text="Title"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:layout_marginTop="70dp"
-                />
+                android:textColor="#fff"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/gettitle"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:singleLine="true"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:backgroundTint="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:background="#333"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/remind_swtich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingRight="25dp"
+                android:text="Remind Me"
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
         </LinearLayout>
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/hanul"
-            android:src="@drawable/ic_send_black_24dp"
-            android:id="@+id/submit"
-            app:fabSize="normal"
-            android:onClick="send"
-            />
-
-
     </LinearLayout>
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/todo_set"
+        android:onClick="send"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="25dp"
+        android:backgroundTint="@color/hanul"
+        android:src="@drawable/ic_send_black_24dp"
+        app:layout_anchor="@id/toplayout"
+        app:layout_anchorGravity="bottom|right" />
 
+</android.support.design.widget.CoordinatorLayout>
 
-</LinearLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:weightSum="3"-->
+    <!--android:orientation="vertical"-->
+    <!--tools:context="kr.soylatte.todo.Activity.Add_Schedule">-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@color/colorPrimary">-->
+
+        <!--<ImageButton-->
+            <!--android:onClick="back"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="#00ff0000"-->
+            <!--android:src="@drawable/ic_clear_black_24dp" />-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Title"-->
+                <!--android:textColor="#FFFFFF"-->
+                <!--android:textSize="20sp"-->
+                <!--android:layout_marginTop="70dp"-->
+                <!--/>-->
+
+            <!--<EditText-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:id="@+id/gettitle"-->
+                <!--android:layout_width="300dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#FFFFFF"-->
+                <!--/>-->
+
+        <!--</LinearLayout>-->
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:backgroundTint="@color/hanul"-->
+            <!--android:src="@drawable/ic_send_black_24dp"-->
+            <!--android:id="@+id/submit"-->
+            <!--app:fabSize="normal"-->
+            <!--android:onClick="send"-->
+            <!--/>-->
+
+    <!--</LinearLayout>-->
+
+<!--</LinearLayout>-->

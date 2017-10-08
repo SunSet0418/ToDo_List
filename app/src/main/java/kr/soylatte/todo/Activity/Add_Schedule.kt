@@ -25,13 +25,13 @@ class Add_Schedule : AppCompatActivity() {
     }
 
     fun send(V : View){
-        var dm : DataManager = DataManager()
+        val dm : DataManager = DataManager()
         val intent = Intent(this@Add_Schedule, MainActivity::class.java)
-        var sp : SharedPreferences = getSharedPreferences("ToDo", MODE_PRIVATE)
-        var editor : SharedPreferences.Editor = sp.edit()
+        val sp : SharedPreferences = getSharedPreferences("ToDo", MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = sp.edit()
         val title : String = gettitle.getText().toString()
 
-        var data : ArrayList<String> = dm.StringToArrayList(sp.getString("ToDo",null))
+        val data : ArrayList<String> = dm.StringToArrayList(sp.getString("ToDo",null))
 
         Log.e("Before DATA ", data.toString())
 
@@ -43,6 +43,18 @@ class Add_Schedule : AppCompatActivity() {
 
         Log.e("After DATA ", sp.getString("ToDo", null))
 
+        //startActivity(intent)
+
+        finish()
+    }
+
+    fun back(V : View){
+        val intent = Intent(this@Add_Schedule, MainActivity::class.java)
         startActivity(intent)
+        finish()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }
