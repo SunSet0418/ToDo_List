@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
         val dm = DataManager()
         var data = ArrayList<String>()
         val sp = getSharedPreferences("ToDo", Context.MODE_PRIVATE)
@@ -24,7 +25,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun add(V : View){
-        val intent : Intent = Intent(this, Add_Schedule::class.java)
+        val intent = Intent(this@MainActivity, Add_Schedule::class.java)
+        startActivity(intent)
+    }
+    fun more(V : View){
+        val intent = Intent(this@MainActivity, Setting_Activity::class.java)
         startActivity(intent)
     }
 

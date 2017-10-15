@@ -9,13 +9,35 @@
     tools:context="kr.soylatte.todo.Activity.MainActivity"
     android:orientation="vertical">
 
-    <ListView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:titleTextColor="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listview"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
         >
 
+        <ImageButton
+            android:onClick="more"
+            android:id="@+id/more"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="370dp"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:layout_marginTop="57dp"
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="604dp"
+        tools:layout_editor_absoluteY="55dp">
+
     </ListView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

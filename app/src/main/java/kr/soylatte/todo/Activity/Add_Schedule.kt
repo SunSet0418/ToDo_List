@@ -25,7 +25,7 @@ class Add_Schedule : AppCompatActivity() {
     }
 
     fun send(V : View){
-        val dm : DataManager = DataManager()
+        val dm = DataManager()
         val intent = Intent(this@Add_Schedule, MainActivity::class.java)
         val sp : SharedPreferences = getSharedPreferences("ToDo", MODE_PRIVATE)
         val editor : SharedPreferences.Editor = sp.edit()
@@ -35,7 +35,7 @@ class Add_Schedule : AppCompatActivity() {
 
         Log.e("Before DATA ", data.toString())
 
-        data.add(gettitle.getText().toString())
+        data.add(title)
 
         Log.e("New DATA ", gettitle.getText().toString())
 
@@ -43,9 +43,7 @@ class Add_Schedule : AppCompatActivity() {
 
         Log.e("After DATA ", sp.getString("ToDo", null))
 
-        //startActivity(intent)
-
-        finish()
+        startActivity(intent)
     }
 
     fun back(V : View){
